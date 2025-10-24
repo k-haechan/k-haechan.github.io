@@ -1,11 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e2b7c1a7b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <a href="#home" class="nav-logo">KHC.DEV</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>안녕하세요, 김해찬입니다.</h1>
+                <p>보안과 유지보수성을 고려한 백엔드 개발을 지향합니다.</p>
+                <a href="#projects" class="btn">프로젝트 보기</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="김해찬 프로필 이미지">
+                </div>
+                <div class="about-text">
+                    <h3>"문제를 다양한 관점에서 바라보고, 보안과 유지보수성을 고려한 백엔드 개발을 지향합니다."</h3>
+                    <ul>
+                        <li><strong>이름:</strong> 김해찬</li>
+                        <li><strong>전공:</strong> 정보보안암호수학</li>
+                        <li><strong>강점:</strong> 보안에 대한 높은 인식, 새로운 기술 습득과 적용 능력</li>
+                        <li><strong>개발 철학:</strong> 단순한 기능 구현이 아니라 <strong>보안·성능·확장성</strong>을 함께 고려한 설계, 팀워크와 코드 리뷰를 통한 성장을 지향합니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="rounded-section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>언어</h4>
+                    <p>Java, Python, C/C++</p>
+                </div>
+                <div class="skill-category">
+                    <h4>백엔드 프레임워크</h4>
+                    <p>Spring Boot, Spring Security</p>
+                </div>
+                <div class="skill-category">
+                    <h4>프론트엔드 & 템플릿</h4>
+                    <p>HTML, JSP, Thymeleaf, Next.js</p>
+                </div>
+                <div class="skill-category">
+                    <h4>데이터베이스</h4>
+                    <p>MySQL, Redis</p>
+                </div>
+                <div class="skill-category">
+                    <h4>인프라 & 배포</h4>
+                    <p>AWS EC2, S3, RDS, Docker, Terraform</p>
+                </div>
+                <div class="skill-category">
+                    <h4>테스트</h4>
+                    <p>JUnit5, Mockito, Jacoco</p>
+                </div>
+                <div class="skill-category">
+                    <h4>CI/CD & 보안</h4>
+                    <p>GitHub Actions, 브랜치 보호 규칙, 환경변수 관리</p>
+                </div>
+                <div class="skill-category">
+                    <h4>기타</h4>
+                    <p>Git, REST API 설계</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="images/project/cotree_thumbnail.png" alt="Cotree 프로젝트 이미지">
+                    <div class="project-info">
+                        <h3>Cotree - 교육 플랫폼 (2025.03 ~ 2025.04)</h3>
+                        <p>인프런과 유사한 교육 플랫폼으로, Spring Security와 JWT를 사용한 회원 도메인 전반을 개발했습니다. 쿼리 최적화로 2배 이상 성능을 개선한 경험이 있습니다.</p>
+                        <div class="project-links">
+                            <a href="https://www.cotree.site/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/k-haechan/WEB3_4_SsamMuDan_BE" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project/sns_thumbnail.png" alt="SNS Service 프로젝트 이미지">
+                    <div class="project-info">
+                        <h3>SNS Service (2025.07 ~ 2025.08)</h3>
+                        <p>기획부터 개발, 배포까지 전담한 1인 SNS 프로젝트입니다. Terraform, GitHub Actions로 인프라와 CI/CD를 자동화하고, AWS SDK 버그를 제보하는 등 주도적으로 문제를 해결했습니다.</p>
+                        <div class="project-links">
+                            <a href="https://www.sns1.haechan.site/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/k-haechan/sns1-server" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="rounded-section">
+            <h2>Career & More</h2>
+            <div class="career-container">
+                <div class="career-item">
+                    <h4>국민대학교<br><small>정보보안암호수학과</small></h4>
+                    <p>2018-03 ~ 2024-02</p>
+                    <ul>
+                        <li>수학적 원리에 기반한 암호학 이론을 학습하고 C/C++로 암호 모듈을 최적화했습니다.</li>
+                        <li>공개 키 기반 구조(PKI)의 인증 및 서명 로직을 직접 구현하며 보안의 기초를 다졌습니다.</li>
+                        <li>Python을 활용하여 통계 기반 데이터를 분석하고, 전처리 및 시각화 역량을 길렀습니다.</li>
+                    </ul>
+                </div>
+                <div class="career-item">
+                    <h4>프로그래머스 데브코스<br><small>클라우드 기반 백엔드 엔지니어링</small></h4>
+                    <p>2024-11-15 ~ 2025-04-18</p>
+                    <ul>
+                        <li>Spring Framework, MySQL 기반 백엔드 서비스 개발 역량을 강화했습니다.</li>
+                        <li>Terraform을 활용한 AWS 인프라 코드 관리(IaC) 방법을 학습했습니다.</li>
+                        <li>Git/GitHub 기반 CI/CD 파이프라인과 RESTful API 협업으로 자동 배포 환경을 경험했습니다.</li>
+                    </ul>
+                </div>
+                <div class="career-item">
+                    <h4>자격증</h4>
+                    <p>SQLD, 정보처리기사, 빅데이터 분석기사</p>
+                </div>
+                <div class="career-item links">
+                    <h4>학습 & 기록</h4>
+                    <a href="https://cheer-for-your-life.tistory.com/" target="_blank"><i class="fas fa-blog"></i> 기술 블로그</a>
+                    <a href="https://github.com/k-haechan" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:gibbm1127@naver.com">gibbm1127@naver.com</a></p>
+            <p><i class="fas fa-phone"></i> 010-3786-5677</p>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/k-haechan" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://cheer-for-your-life.tistory.com/" target="_blank"><i class="fas fa-blog"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 김해찬. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

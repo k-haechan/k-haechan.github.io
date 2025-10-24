@@ -1,0 +1,366 @@
+:root {
+    --bg-color: #1a1a1a;
+    --primary-color: #2c2c2c; /* Slightly lighter than bg for cards */
+    --secondary-color: #00aaff; /* A vibrant blue for accent */
+    --text-color: #f5f5f5;
+    --text-secondary-color: #a7a7a7;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header & Nav */
+header {
+    background-color: rgba(26, 26, 26, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a:hover {
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* General Section Title */
+#about h2, #skills h2, #projects h2, #career h2, #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+}
+
+.about-image {
+    flex-basis: 30%;
+    min-width: 250px;
+}
+
+.about-image img {
+    border-radius: 50%;
+}
+
+.about-text {
+    flex-basis: 70%;
+}
+
+.about-text h3 {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-text ul li {
+    margin-bottom: 0.8rem;
+}
+
+.rounded-section {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+/* Skills Section */
+#skills {
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.skill-category {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.skill-category h4 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-category p {
+    color: var(--text-secondary-color);
+}
+
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+}
+
+.project-info p {
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.project-links a {
+    margin-right: 1rem;
+    font-weight: 600;
+}
+
+/* Career Section */
+#career {
+}
+
+.career-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: left;
+}
+
+.career-item {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.career-item h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
+}
+
+.career-item h4 small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary-color);
+    display: block;
+}
+
+.career-item p {
+    color: var(--text-secondary-color);
+}
+
+.career-item ul {
+    list-style-position: inside;
+    text-align: left;
+    margin-top: 1rem;
+    list-style-type: '— ';
+}
+
+.career-item ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary-color);
+    padding-left: 5px;
+}
+
+.career-item.links a {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.career-item.links i {
+    margin-right: 0.5rem;
+}
+
+/* Contact Section (Footer) */
+#contact {
+    background-color: var(--bg-color);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+.social-links {
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    font-size: 2rem;
+    margin: 0 1rem;
+    color: var(--text-secondary-color);
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Simple responsive nav for now */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .career-container {
+        grid-template-columns: 1fr;
+    }
+}
