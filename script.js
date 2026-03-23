@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ========== Typing Animation ========== */
     const typedEl = document.getElementById('typed');
-    const phrases = ['김해찬입니다.', 'Backend Developer입니다.', '보안을 생각하는 개발자입니다.'];
+    const phrases = ['김해찬입니다.', 'Backend Developer입니다.', '문제를 빠르게 해결하는 개발자입니다.'];
     let phraseIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
