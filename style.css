@@ -41,6 +41,19 @@ img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
 h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; }
 
+/* ========== Focus Visible ========== */
+*:focus { outline: none; }
+*:focus-visible {
+    outline: 2px solid var(--grad-start);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+.btn:focus-visible,
+.overlay-btn:focus-visible,
+.contact-card:focus-visible {
+    outline-offset: 4px;
+}
+
 /* ========== Header ========== */
 #header {
     position: fixed;
