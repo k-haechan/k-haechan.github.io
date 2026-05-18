@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="about-text">
-                        <blockquote>"문제의 본질을 정확히 이해하고, 다양한 경험에서 비롯한 적절한 방법으로 빠르게 해결하는 개발자를 지향합니다."</blockquote>
+                        <blockquote>"문제를 다양한 관점에서 바라보고, 보안과 유지보수성을 고려한 백엔드 개발을 지향합니다."</blockquote>
                         <div class="about-grid">
                             <div class="about-item">
                                 <span class="about-label">이름</span>
@@ -81,10 +81,10 @@
                             </div>
                             <div class="about-item">
                                 <span class="about-label">강점</span>
-                                <span class="about-value">문제 인식 · 빠른 문제 해결</span>
+                                <span class="about-value">보안 인식 · 새로운 기술 습득</span>
                             </div>
                         </div>
-                        <p class="about-philosophy">단순히 동작하는 코드가 아니라 <strong>문제의 원인을 정확히 파악</strong>하고, 암호학·보안·인프라 등 다양한 도메인 경험을 바탕으로 <strong>현재 상황에 가장 적합한 방법</strong>을 선택해 빠르게 해결하는 것을 중요하게 생각합니다.</p>
+                        <p class="about-philosophy">단순한 기능 구현이 아니라 <strong>보안·성능·확장성을 함께 고려한 설계</strong>, 팀워크와 <strong>코드 리뷰를 통한 성장</strong>을 지향합니다.</p>
                     </div>
                 </div>
             </div>
@@ -155,13 +155,33 @@
                     <div class="skill-group reveal">
                         <div class="skill-group-header">
                             <i class="fas fa-vial"></i>
-                            <h4>테스트 & CI/CD</h4>
+                            <h4>테스트</h4>
                         </div>
                         <div class="skill-tags">
                             <span class="tag">JUnit5</span>
                             <span class="tag">Mockito</span>
                             <span class="tag">Jacoco</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <div class="skill-group-header">
+                            <i class="fas fa-shield-halved"></i>
+                            <h4>CI/CD & 보안</h4>
+                        </div>
+                        <div class="skill-tags">
                             <span class="tag">GitHub Actions</span>
+                            <span class="tag">브랜치 보호 규칙</span>
+                            <span class="tag">환경변수 관리</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <div class="skill-group-header">
+                            <i class="fas fa-toolbox"></i>
+                            <h4>기타</h4>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="tag">Git</span>
+                            <span class="tag">REST API 설계</span>
                         </div>
                     </div>
                 </div>
@@ -174,48 +194,6 @@
                 <p class="section-label">Projects</p>
                 <h2 class="section-title">프로젝트</h2>
                 <div class="projects-grid">
-
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="images/project/cotree_thumbnail.png" alt="Cotree 썸네일">
-                            <div class="project-overlay">
-                                <a href="https://www.cotree.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/k-haechan/WEB3_4_SsamMuDan_BE" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <span class="project-period">2025.03 — 2025.04</span>
-                            <h3>Cotree</h3>
-                            <p>인프런과 유사한 교육 플랫폼. Spring Security와 JWT를 사용한 회원 도메인 전반 개발, 쿼리 최적화로 성능 2배 이상 개선.</p>
-                            <div class="tech-tags">
-                                <span class="tech">Spring Boot</span>
-                                <span class="tech">Spring Security</span>
-                                <span class="tech">JWT</span>
-                                <span class="tech">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="images/project/sns_thumbnail.png" alt="SNS Service 썸네일">
-                            <div class="project-overlay">
-                                <a href="https://www.sns1.haechan.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/k-haechan/sns1-server" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <span class="project-period">2025.07 — 2025.08</span>
-                            <h3>SNS Service</h3>
-                            <p>기획부터 배포까지 1인 개발. Terraform·GitHub Actions로 인프라와 CI/CD 자동화, AWS SDK 버그 직접 제보.</p>
-                            <div class="tech-tags">
-                                <span class="tech">Spring Boot</span>
-                                <span class="tech">Terraform</span>
-                                <span class="tech">AWS</span>
-                                <span class="tech">Docker</span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="project-card reveal">
                         <div class="project-img">
@@ -238,6 +216,52 @@
                         </div>
                     </div>
 
+                    <div class="project-card reveal">
+                        <div class="project-img">
+                            <img src="images/project/sns_thumbnail.png" alt="SNS Service 썸네일">
+                            <div class="project-overlay">
+                                <a href="https://www.sns1.haechan.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://github.com/k-haechan/sns1-server" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-period">2025.07 — 2025.08</span>
+                            <h3>SNS Service</h3>
+                            <p>기획부터 개발·배포까지 전담한 1인 SNS 서비스. STOMP·SSE 기반 실시간 채팅과 알림 구현, Terraform과 GitHub Actions로 인프라·CI/CD 자동화. AWS SDK v2 버그를 공식 레포에 이슈 제보(#6127).</p>
+                            <div class="tech-tags">
+                                <span class="tech">Spring Boot</span>
+                                <span class="tech">Spring Security</span>
+                                <span class="tech">AWS S3</span>
+                                <span class="tech">Terraform</span>
+                                <span class="tech">STOMP</span>
+                                <span class="tech">SSE</span>
+                                <span class="tech">QueryDSL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-img">
+                            <img src="images/project/cotree_thumbnail.png" alt="Cotree 썸네일">
+                            <div class="project-overlay">
+                                <a href="https://www.cotree.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://github.com/k-haechan/WEB3_4_SsamMuDan_BE" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-period">2025.03 — 2025.04</span>
+                            <h3>Cotree</h3>
+                            <p>인프런과 유사한 교육 플랫폼. Spring Security + JWT 기반 회원 도메인 전반 담당(이메일 인증, 카카오 OAuth), 리뷰 조회 쿼리 최적화와 복합 인덱스 적용으로 응답 속도 2배 이상 개선.</p>
+                            <div class="tech-tags">
+                                <span class="tech">Spring Boot</span>
+                                <span class="tech">Spring Security</span>
+                                <span class="tech">JWT</span>
+                                <span class="tech">OAuth</span>
+                                <span class="tech">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -252,13 +276,25 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
-                            <span class="tl-period">2018.03 — 2024.02</span>
-                            <h4>국민대학교</h4>
-                            <p class="tl-sub">정보보안암호수학과</p>
+                            <span class="tl-period">2026.01 — 2026.03</span>
+                            <h4>삼성 청년 SW AI 아카데미 (SSAFY)</h4>
+                            <p class="tl-sub">SW 역량 강화 과정</p>
                             <ul>
-                                <li>수학적 원리에 기반한 암호학 이론 학습 및 C/C++로 암호 모듈 최적화</li>
-                                <li>공개 키 기반 구조(PKI)의 인증 및 서명 로직 직접 구현</li>
-                                <li>Python을 활용한 통계 기반 데이터 분석, 전처리 및 시각화</li>
+                                <li>알고리즘, 자료구조 집중 학습 및 코딩 테스트 역량 강화</li>
+                                <li>Java·Python 기반 문제 풀이와 CS 핵심 개념 체계적으로 정리</li>
+                                <li>팀 프로젝트를 통한 협업 및 백엔드 서비스 개발 경험</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="tl-period">6개월</span>
+                            <h4>Effective Java 심화 스터디</h4>
+                            <p class="tl-sub">스프링 및 Java 심화 학습</p>
+                            <ul>
+                                <li>Effective Java를 함께 읽으며 객체 지향과 Java 관용구 심화 학습</li>
+                                <li>코드 리뷰와 실습 중심으로 백엔드 개발 역량 강화</li>
                             </ul>
                         </div>
                     </div>
@@ -278,13 +314,13 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-marker"></div>
                         <div class="timeline-card">
-                            <span class="tl-period">2026.01 — 2026.03</span>
-                            <h4>삼성 청년 SW AI 아카데미 (SSAFY)</h4>
-                            <p class="tl-sub">SW 역량 강화 과정</p>
+                            <span class="tl-period">2018.03 — 2024.02</span>
+                            <h4>국민대학교</h4>
+                            <p class="tl-sub">정보보안암호수학과</p>
                             <ul>
-                                <li>알고리즘, 자료구조 집중 학습 및 코딩 테스트 역량 강화</li>
-                                <li>Java·Python 기반 문제 풀이와 CS 핵심 개념 체계적으로 정리</li>
-                                <li>팀 프로젝트를 통한 협업 및 백엔드 서비스 개발 경험</li>
+                                <li>수학적 원리에 기반한 암호학 이론 학습 및 C/C++로 암호 모듈 최적화</li>
+                                <li>공개 키 기반 구조(PKI)의 인증 및 서명 로직 직접 구현</li>
+                                <li>Python을 활용한 통계 기반 데이터 분석, 전처리 및 시각화</li>
                             </ul>
                         </div>
                     </div>
@@ -294,7 +330,7 @@
                     <div class="extra-card">
                         <div class="extra-icon"><i class="fas fa-certificate"></i></div>
                         <h4>자격증</h4>
-                        <p>SQLD · 정보처리기사<br>빅데이터 분석기사</p>
+                        <p>빅데이터 분석기사 · 2024.07<br>정보처리기사 · 2024.06<br>SQLD · 2023.07</p>
                     </div>
                     <div class="extra-card">
                         <div class="extra-icon"><i class="fas fa-pen-nib"></i></div>
