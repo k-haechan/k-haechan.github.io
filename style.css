@@ -354,6 +354,7 @@ nav {
 .about-text { flex: 1; }
 
 blockquote {
+    font-family: inherit;
     font-size: 1.05rem;
     font-style: italic;
     color: var(--text-muted);
