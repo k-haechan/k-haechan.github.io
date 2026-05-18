@@ -437,7 +437,7 @@ blockquote {
     background-clip: text;
 }
 
-.skill-group-header h4 {
+.skill-group-header h3 {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text);
@@ -658,7 +658,7 @@ blockquote {
     margin-bottom: 0.5rem;
 }
 
-.timeline-card h4 {
+.timeline-card h3 {
     font-size: 1.15rem;
     color: var(--text);
     margin-bottom: 0.3rem;
