@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* ========== Copyright Year ========== */
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
     /* ========== Typing Animation ========== */
     const typedEl = document.getElementById('typed');
     const phrases = ['김해찬입니다.', 'Backend Developer입니다.', '문제를 빠르게 해결하는 개발자입니다.'];
