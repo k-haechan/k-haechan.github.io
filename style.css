@@ -726,7 +726,7 @@ blockquote {
     background-clip: text;
 }
 
-.extra-card h4 {
+.extra-card h3 {
     font-size: 0.9rem;
     color: var(--text);
     margin-bottom: 0.5rem;
