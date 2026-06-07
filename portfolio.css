@@ -75,6 +75,9 @@ nav.scrolled { border-color: var(--line); height: 58px; }
   letter-spacing: -0.03em;
   margin-right: auto;
   white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 .nav-brand .dot { color: var(--blue); }
 
@@ -88,10 +91,13 @@ nav.scrolled { border-color: var(--line); height: 58px; }
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink-2);
-  padding: 8px 14px;
+  padding: 11px 14px;
   border-radius: 7px;
   transition: color 0.18s, background 0.18s;
   white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 .nav-links a:hover { color: var(--ink); background: var(--bg-2); }
 .nav-links a.active { color: var(--blue); }
