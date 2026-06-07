@@ -39,7 +39,6 @@ const PROJECTS = [
       { val: '5min', lab: 'Presigned URL 만료' },
     ],
     links: [
-      { label: 'Live', url: 'https://www.sns1.haechan.site/' },
       { label: 'GitHub', url: 'https://github.com/k-haechan/sns1-server' },
       { label: 'IaC 템플릿', url: 'https://github.com/k-haechan/cicd-template-repo' },
     ],
@@ -138,7 +137,6 @@ const PROJECTS = [
       { val: '20 / 162', lab: '본인 커밋 / 팀 전체' },
     ],
     links: [
-      { label: 'Live', url: 'https://www.cotree.site/' },
       { label: 'GitHub', url: 'https://github.com/k-haechan/WEB3_4_SsamMuDan_BE' },
     ],
     overview: '강의 콘텐츠·학습 자료·리뷰 기능을 제공하는 교육 플랫폼에서 <strong>회원/인증 도메인을 전담</strong>했습니다. 다인원 팀의 PR·이슈 기반 협업으로 도메인 경계를 나눠 개발하고, <strong>"측정 → 병목 분석(EXPLAIN) → 인덱스 설계 → 재측정"의 데이터 기반 성능 개선 사이클</strong>을 경험했습니다.',
