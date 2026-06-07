@@ -1,402 +1,254 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="김해찬 — 보안과 유지보수성을 고려한 백엔드 개발자 포트폴리오. Spring Boot, AWS, Terraform 기반 프로젝트와 경력 소개.">
-    <meta name="theme-color" content="#0a0a0f">
-    <meta name="author" content="김해찬">
-    <link rel="canonical" href="https://portfolio.haechan.site/">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Poppins,sans-serif' font-size='52' font-weight='700' fill='%238b5cf6'%3EK%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="김해찬 — 보안과 유지보수성을 고려한 백엔드 개발자 포트폴리오. Spring Boot, AWS, Terraform 기반 프로젝트와 경력 소개.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="author" content="김해찬">
+  <link rel="canonical" href="https://portfolio.haechan.site/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FFFFFF'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Poppins,sans-serif' font-size='52' font-weight='700' fill='%230066FF'%3EK%3C/text%3E%3C/svg%3E">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://portfolio.haechan.site/">
-    <meta property="og:title" content="김해찬 | Backend Developer Portfolio">
-    <meta property="og:description" content="보안과 유지보수성을 고려한 백엔드 개발자. Spring Boot · AWS · Terraform 기반 프로젝트.">
-    <meta property="og:image" content="https://portfolio.haechan.site/images/profile.jpg">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:site_name" content="KHC.DEV">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio.haechan.site/">
+  <meta property="og:title" content="김해찬 | Backend Developer Portfolio">
+  <meta property="og:description" content="보안과 유지보수성을 고려한 백엔드 개발자. Spring Boot · AWS · Terraform 기반 프로젝트.">
+  <meta property="og:image" content="https://portfolio.haechan.site/images/profile.jpg">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="KHC.DEV">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="김해찬 | Backend Developer Portfolio">
-    <meta name="twitter:description" content="보안과 유지보수성을 고려한 백엔드 개발자 포트폴리오.">
-    <meta name="twitter:image" content="https://portfolio.haechan.site/images/profile.jpg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="김해찬 | Backend Developer Portfolio">
+  <meta name="twitter:description" content="보안과 유지보수성을 고려한 백엔드 개발자 포트폴리오.">
+  <meta name="twitter:image" content="https://portfolio.haechan.site/images/profile.jpg">
 
-    <title>김해찬 | Backend Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+  <title>김해찬 — Backend Developer</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header id="header">
-        <nav>
-            <a href="#home" class="nav-logo">KHC<span class="accent">.</span>DEV</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-        <div class="mobile-menu" id="mobile-menu">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+  <!-- ═══ NAV ═══ -->
+  <nav id="nav">
+    <a href="#home" class="nav-brand">김해찬<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#about">/ About</a>
+      <a href="#skills">/ Skills</a>
+      <a href="#projects">/ Projects</a>
+      <a href="#career">/ Career</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about"><span class="mnum">01</span> About</a>
+    <a href="#skills"><span class="mnum">02</span> Skills</a>
+    <a href="#projects"><span class="mnum">03</span> Projects</a>
+    <a href="#career"><span class="mnum">04</span> Career</a>
+    <a href="#contact"><span class="mnum">05</span> Contact</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-eyebrow reveal">Java Backend Developer</p>
+        <h1 class="hero-title reveal">
+          김해찬<br>
+          <span class="accent">Haechan</span> Kim
+        </h1>
+        <p class="hero-lead reveal">
+          비즈니스 운영 효율을 시스템으로 구조화하고, <strong>AI 자동화</strong>로 업무 공수를 혁신하는 백엔드 개발자 김해찬입니다.
+          실시간 기능 구현부터 복잡한 자동화 파이프라인, AWS 인프라 자동화(IaC)까지 백엔드 전반을 비즈니스 성과 관점에서 설계합니다.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-fill">
+            프로젝트 보기
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="이력서_해찬.html" target="_blank" class="btn btn-ghost">이력서 (PDF)</a>
         </div>
-    </header>
-
-    <main>
-
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div class="hero-bg-gradient"></div>
-            <div class="hero-content">
-                <p class="hero-greeting">안녕하세요 👋</p>
-                <h1>저는 <span id="typed">김해찬입니다.</span><span class="cursor">|</span></h1>
-                <p class="hero-desc">문제를 정확히 파악하고, 다양한 경험을 바탕으로 빠르게 해결합니다.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-                    <a href="#contact" class="btn btn-outline">연락하기</a>
-                </div>
-            </div>
-            <a href="#about" class="scroll-indicator" aria-label="아래로 스크롤">
-                <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-            </a>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="section">
-            <div class="section-inner">
-                <p class="section-label">About</p>
-                <h2 class="section-title">나를 소개합니다</h2>
-                <div class="about-container reveal">
-                    <div class="about-image">
-                        <div class="img-frame">
-                            <img src="images/profile.jpg" alt="김해찬 프로필 이미지">
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <blockquote>"문제를 다양한 관점에서 바라보고, 보안과 유지보수성을 고려한 백엔드 개발을 지향합니다."</blockquote>
-                        <div class="about-grid">
-                            <div class="about-item">
-                                <span class="about-label">이름</span>
-                                <span class="about-value">김해찬</span>
-                            </div>
-                            <div class="about-item">
-                                <span class="about-label">전공</span>
-                                <span class="about-value">정보보안암호수학</span>
-                            </div>
-                            <div class="about-item">
-                                <span class="about-label">강점</span>
-                                <span class="about-value">보안 인식 · 새로운 기술 습득</span>
-                            </div>
-                        </div>
-                        <p class="about-philosophy">단순한 기능 구현이 아니라 <strong>보안·성능·확장성을 함께 고려한 설계</strong>, 팀워크와 <strong>코드 리뷰를 통한 성장</strong>을 지향합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="section alt-bg">
-            <div class="section-inner">
-                <p class="section-label">Skills</p>
-                <h2 class="section-title">기술 스택</h2>
-                <div class="skills-wrapper">
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-code"></i>
-                            <h3>언어</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">C / C++</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-server"></i>
-                            <h3>백엔드</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">Spring Security</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-laptop-code"></i>
-                            <h3>프론트엔드</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">HTML / CSS</span>
-                            <span class="tag">JSP</span>
-                            <span class="tag">Thymeleaf</span>
-                            <span class="tag">Next.js</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-database"></i>
-                            <h3>데이터베이스</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Redis</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-cloud"></i>
-                            <h3>인프라 & 배포</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">AWS EC2</span>
-                            <span class="tag">S3</span>
-                            <span class="tag">RDS</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Terraform</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-vial"></i>
-                            <h3>테스트</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">JUnit5</span>
-                            <span class="tag">Mockito</span>
-                            <span class="tag">Jacoco</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-shield-halved"></i>
-                            <h3>CI/CD & 보안</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">GitHub Actions</span>
-                            <span class="tag">브랜치 보호 규칙</span>
-                            <span class="tag">환경변수 관리</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-header">
-                            <i class="fas fa-toolbox"></i>
-                            <h3>기타</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">Git</span>
-                            <span class="tag">REST API 설계</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="section">
-            <div class="section-inner">
-                <p class="section-label">Projects</p>
-                <h2 class="section-title">프로젝트</h2>
-                <div class="projects-grid">
-
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="images/project/ssafy_thumbnail.png" alt="SSAFY Study 썸네일">
-                            <div class="project-overlay">
-                                <a href="https://www.ssafy-study.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/k-haechan/study_backend" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <span class="project-period">2026.03 (2주)</span>
-                            <h3>SSAFY Study</h3>
-                            <p>알고리즘, 자료구조, CS 핵심 개념을 정리한 스터디 저장소. 꾸준한 문제 풀이와 개념 기록으로 기본기를 다집니다.</p>
-                            <div class="tech-tags">
-                                <span class="tech">Java</span>
-                                <span class="tech">Python</span>
-                                <span class="tech">Algorithm</span>
-                                <span class="tech">CS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="images/project/sns_thumbnail.png" alt="SNS Service 썸네일">
-                            <div class="project-overlay">
-                                <a href="https://www.sns1.haechan.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/k-haechan/sns1-server" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <span class="project-period">2025.07 — 2025.08</span>
-                            <h3>SNS Service</h3>
-                            <p>기획부터 개발·배포까지 전담한 1인 SNS 서비스. STOMP·SSE 기반 실시간 채팅과 알림 구현, Terraform과 GitHub Actions로 인프라·CI/CD 자동화. AWS SDK v2 버그를 공식 레포에 이슈 제보(#6127).</p>
-                            <div class="tech-tags">
-                                <span class="tech">Spring Boot</span>
-                                <span class="tech">Spring Security</span>
-                                <span class="tech">AWS S3</span>
-                                <span class="tech">Terraform</span>
-                                <span class="tech">STOMP</span>
-                                <span class="tech">SSE</span>
-                                <span class="tech">QueryDSL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="images/project/cotree_thumbnail.png" alt="Cotree 썸네일">
-                            <div class="project-overlay">
-                                <a href="https://www.cotree.site/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/k-haechan/WEB3_4_SsamMuDan_BE" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <span class="project-period">2025.03 — 2025.04</span>
-                            <h3>Cotree</h3>
-                            <p>인프런과 유사한 교육 플랫폼. Spring Security + JWT 기반 회원 도메인 전반 담당(이메일 인증, 카카오 OAuth), 리뷰 조회 쿼리 최적화와 복합 인덱스 적용으로 응답 속도 2배 이상 개선.</p>
-                            <div class="tech-tags">
-                                <span class="tech">Spring Boot</span>
-                                <span class="tech">Spring Security</span>
-                                <span class="tech">JWT</span>
-                                <span class="tech">OAuth</span>
-                                <span class="tech">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Career -->
-        <section id="career" class="section alt-bg">
-            <div class="section-inner">
-                <p class="section-label">Career</p>
-                <h2 class="section-title">경력 & 학력</h2>
-
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card">
-                            <span class="tl-period">2026.01 — 2026.03</span>
-                            <h3>삼성 청년 SW AI 아카데미 (SSAFY)</h3>
-                            <p class="tl-sub">SW 역량 강화 과정</p>
-                            <ul>
-                                <li>알고리즘, 자료구조 집중 학습 및 코딩 테스트 역량 강화</li>
-                                <li>Java·Python 기반 문제 풀이와 CS 핵심 개념 체계적으로 정리</li>
-                                <li>팀 프로젝트를 통한 협업 및 백엔드 서비스 개발 경험</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card">
-                            <span class="tl-period">6개월</span>
-                            <h3>Effective Java 심화 스터디</h3>
-                            <p class="tl-sub">스프링 및 Java 심화 학습</p>
-                            <ul>
-                                <li>Effective Java를 함께 읽으며 객체 지향과 Java 관용구 심화 학습</li>
-                                <li>코드 리뷰와 실습 중심으로 백엔드 개발 역량 강화</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card">
-                            <span class="tl-period">2024.11 — 2025.04</span>
-                            <h3>프로그래머스 데브코스</h3>
-                            <p class="tl-sub">클라우드 기반 백엔드 엔지니어링</p>
-                            <ul>
-                                <li>Spring Framework, MySQL 기반 백엔드 서비스 개발 역량 강화</li>
-                                <li>Terraform을 활용한 AWS 인프라 코드 관리(IaC) 학습</li>
-                                <li>Git/GitHub 기반 CI/CD 파이프라인과 RESTful API 협업으로 자동 배포 경험</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card">
-                            <span class="tl-period">2018.03 — 2024.02</span>
-                            <h3>국민대학교</h3>
-                            <p class="tl-sub">정보보안암호수학과</p>
-                            <ul>
-                                <li>수학적 원리에 기반한 암호학 이론 학습 및 C/C++로 암호 모듈 최적화</li>
-                                <li>공개 키 기반 구조(PKI)의 인증 및 서명 로직 직접 구현</li>
-                                <li>Python을 활용한 통계 기반 데이터 분석, 전처리 및 시각화</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="extras reveal">
-                    <div class="extra-card">
-                        <div class="extra-icon"><i class="fas fa-certificate"></i></div>
-                        <h3>자격증</h3>
-                        <p>빅데이터 분석기사 · 2024.07<br>정보처리기사 · 2024.06<br>SQLD · 2023.07</p>
-                    </div>
-                    <div class="extra-card">
-                        <div class="extra-icon"><i class="fas fa-pen-nib"></i></div>
-                        <h3>기술 블로그</h3>
-                        <a href="https://cheer-for-your-life.tistory.com/" target="_blank">cheer-for-your-life<br>.tistory.com</a>
-                    </div>
-                    <div class="extra-card">
-                        <div class="extra-icon"><i class="fab fa-github"></i></div>
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/k-haechan" target="_blank">github.com/<br>k-haechan</a>
-                    </div>
-                    <div class="extra-card">
-                        <div class="extra-icon"><i class="fab fa-youtube"></i></div>
-                        <h3>YouTube</h3>
-                        <a href="https://www.youtube.com/@%EC%84%9C%EC%9A%B8_17%EB%B0%98_%EA%B9%80%ED%95%B4%EC%B0%AC" target="_blank" rel="noopener">서울 17반<br>김해찬 채널</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer / Contact -->
-    <footer id="contact">
-        <div class="footer-inner">
-            <h2>Contact Me</h2>
-            <p class="footer-sub">함께 성장할 수 있는 기회를 기다립니다.</p>
-            <div class="contact-grid">
-                <a href="mailto:gibbm1127@naver.com" class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <span>gibbm1127@naver.com</span>
-                </a>
-                <a href="tel:01037865677" class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <span>010-3786-5677</span>
-                </a>
-                <a href="https://github.com/k-haechan" target="_blank" class="contact-card">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/k-haechan</span>
-                </a>
-            </div>
+      </div>
+      <div class="hero-photo-wrap reveal">
+        <div class="hero-photo-frame">
+          <div class="photo-glow"></div>
+          <img src="images/profile.jpg" alt="김해찬 프로필 사진" class="hero-photo-img">
         </div>
-        <p class="copyright">&copy; <span id="copyright-year">2026</span> 김해찬. All rights reserved.</p>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">/ 01</span>
+        <h2 class="sec-title">About</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="about-grid">
+        <blockquote class="about-quote reveal">
+          <span class="hl">문제의 본질을 분석</span>하고,<br>
+          <span class="hl">시스템으로 구조화</span>하는<br>
+          백엔드 개발자입니다.
+        </blockquote>
+        <div class="about-body reveal">
+          <p>
+            SSE·STOMP 기반 <strong>실시간 기능 구현</strong>부터 Groq API 기반 <strong>AI 자동화 파이프라인</strong>,
+            Terraform IaC와 CI/CD까지 — 기획부터 배포까지 직접 책임지며 백엔드 전반을 설계하고 개발합니다.
+          </p>
+          <p>
+            단순 기능 구현을 넘어, <strong>문제의 본질을 정확히 파악</strong>하고 AI 에이전트·CI/CD 등을 적재적소에 적극 활용해
+            <strong>개발 및 운영 공수를 줄이는 데 진심</strong>입니다. 더 많은 퍼포먼스를 내기 위해 최신 트렌드를 꾸준히 학습하고 실무에 적용합니다.
+            정보보안암호수학 전공 배경을 바탕으로 인증·서명 등 보안을 우선 고려한 설계도 강점으로 삼습니다.
+          </p>
+          <dl class="about-facts">
+            <div class="about-fact"><dt>Name</dt><dd>김해찬 (Kim Haechan)</dd></div>
+            <div class="about-fact"><dt>Role</dt><dd>Backend Developer</dd></div>
+            <div class="about-fact"><dt>Major</dt><dd>국민대 정보보안암호수학과</dd></div>
+            <div class="about-fact"><dt>Based in</dt><dd>Suwon, Korea</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">/ 02</span>
+        <h2 class="sec-title">Skills</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="skills-list" id="skillsList"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">/ 03</span>
+        <h2 class="sec-title">Projects</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="proj-list" id="projList"></div>
+    </div>
+  </section>
+
+  <!-- ═══ CAREER ═══ -->
+  <section id="career">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">/ 04</span>
+        <h2 class="sec-title">Career &amp; Education</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="career-grid">
+        <div class="timeline reveal">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <p class="tl-period">2026.01 — 현재</p>
+            <p class="tl-title">삼성 청년 SW·AI 아카데미 (SSAFY)</p>
+            <ul class="tl-bullets">
+              <li>Spring Framework 스터디 전담 리딩 — 주도적으로 이끌며 백엔드 아키텍처 이해도 향상</li>
+              <li>알고리즘 및 AI 활용 개발 역량 강화</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <p class="tl-period">2024.11 — 2025.04</p>
+            <h3 class="tl-title">프로그래머스 데브코스 — 클라우드 백엔드</h3>
+            <ul class="tl-bullets">
+              <li>Spring · MySQL · <strong>Terraform 기반 AWS IaC</strong> · GitHub Actions CI/CD 협업 (→ Cotree)</li>
+              <li><strong>Effective Java 스터디</strong>: 자바 핵심 이론 · 베스트 프랙티스 학습, 코드 리뷰를 통한 심화 역량 내재화</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <p class="tl-period">2018.03 — 2024.02</p>
+            <h3 class="tl-title">국민대학교 정보보안암호수학과</h3>
+            <ul class="tl-bullets">
+              <li>암호학 이론, C/C++ 암호 모듈 최적화</li>
+              <li><strong>PKI 인증·서명 로직 구현</strong>, Python 데이터 분석</li>
+            </ul>
+          </div>
+        </div>
+        <div class="career-side reveal">
+          <div class="cs-block">
+            <p class="cs-title">자격증</p>
+            <div class="cs-cert">
+              <div class="cs-cert-item"><span class="ci-name">빅데이터분석기사</span><span class="ci-date">2024.07</span></div>
+              <div class="cs-cert-item"><span class="ci-name">정보처리기사</span><span class="ci-date">2024.06</span></div>
+              <div class="cs-cert-item"><span class="ci-name">SQLD</span><span class="ci-date">2023.07</span></div>
+            </div>
+          </div>
+          <a class="cs-block cs-oss" href="https://github.com/aws/aws-sdk-java-v2/issues/6127" target="_blank">
+            <p class="cs-title">오픈소스 기여</p>
+            <span class="cs-oss-badge">aws-sdk-java-v2 #6127 · CLOSED</span>
+            <p class="cs-oss-text">
+              <strong>CloudFront 서명 쿠키 정책 한계 제보</strong> — <code>CustomSignerRequest</code>가
+              <code>resourceUrlPattern</code>을 지원하지 않는 문제를 발견해 공식 레포에 이슈 등록.
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <p class="contact-eyebrow reveal">/ 05 — Contact</p>
+        <h2 class="contact-title reveal">함께 일하고 <span class="accent">싶으시다면</span></h2>
+        <p class="contact-lead reveal">언제든 편하게 연락 주세요. 빠르게 회신드리겠습니다.</p>
+        <div class="contact-grid reveal">
+          <a class="contact-card" href="mailto:gibbm1127@naver.com">
+            <span class="cc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <span class="cc-value">gibbm1127@naver.com</span>
+          </a>
+          <a class="contact-card" href="tel:01037865677">
+            <span class="cc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg></span>
+            <span class="cc-value">010-3786-5677</span>
+          </a>
+          <a class="contact-card" href="https://github.com/k-haechan" target="_blank">
+            <span class="cc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.683-.104-.253-.447-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></span>
+            <span class="cc-value">github.com/k-haechan</span>
+          </a>
+          <a class="contact-card" href="https://cheer-for-your-life.tistory.com/" target="_blank">
+            <span class="cc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <span class="cc-value">cheer-for-your-life.tistory.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span class="footer-brand">김해찬<span class="dot">.</span></span>
+      <span class="footer-note">© 2026 Kim Haechan · Backend Developer</span>
+    </div>
+  </footer>
+
+  <!-- ═══ MODAL ═══ -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose" aria-label="close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="portfolio-data.js"></script>
+  <script src="portfolio-app.js"></script>
 </body>
 </html>
