@@ -32,9 +32,12 @@
 </head>
 <body>
 
+  <div id="scrollProgress" class="scroll-progress"></div>
+
   <!-- ═══ NAV ═══ -->
   <nav id="nav">
     <a href="#home" class="nav-brand">김해찬<span class="dot">.</span></a>
+    <span class="otw-badge"><span class="otw-dot"></span>Open to Work</span>
     <div class="nav-links">
       <a href="#about">/ About</a>
       <a href="#skills">/ Skills</a>
@@ -245,6 +248,23 @@
     <div class="modal" id="modal">
       <button class="modal-close" id="modalClose" aria-label="close">✕</button>
       <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ═══ TERMINAL EASTER EGG ═══ -->
+  <div id="terminalOverlay" class="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <span class="tb-dot tb-red"></span>
+        <span class="tb-dot tb-yellow"></span>
+        <span class="tb-dot tb-green"></span>
+        <span class="tb-title">haechan@portfolio: ~</span>
+      </div>
+      <div id="terminalBody" class="terminal-body"></div>
+      <div class="terminal-input-line">
+        <span class="terminal-prompt">haechan@portfolio:~$</span>
+        <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" aria-label="terminal input">
+      </div>
     </div>
   </div>
 

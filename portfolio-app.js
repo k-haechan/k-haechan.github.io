@@ -2,6 +2,15 @@
    포트폴리오 앱 로직
 ═══════════════════════════════════════════════════ */
 
+/* ── Console Easter Egg ─────────────────────────── */
+(function consoleEgg() {
+  console.log('%c김해찬 포트폴리오', 'font-size:20px;font-weight:800;color:#0066FF;letter-spacing:-0.03em;');
+  console.log('%c개발자시군요 👋  여기까지 오셨다니 반갑습니다.', 'font-size:13px;color:#4E5968;');
+  console.log('%c채용 문의는 언제든 환영합니다.', 'font-size:13px;color:#4E5968;');
+  console.log('%c→ gibbm1127@naver.com', 'font-size:13px;font-weight:600;color:#0066FF;');
+  console.log('%c→ github.com/k-haechan', 'font-size:13px;font-weight:600;color:#0066FF;');
+})();
+
 /* ── Render skills ─────────────────────────────── */
 // 프로젝트를 index 순 (/ 01 → / 02 → / 03) 으로 정렬
 PROJECTS.sort((a, b) => a.index.localeCompare(b.index));
@@ -55,6 +64,24 @@ PROJECTS.sort((a, b) => a.index.localeCompare(b.index));
     card.addEventListener('click', open);
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+
+    /* 3-D tilt */
+    let tiltTimer;
+    card.addEventListener('mouseenter', () => {
+      clearTimeout(tiltTimer);
+      card.style.transition = 'box-shadow 0.28s, border-color 0.28s';
+    });
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      card.style.transform = `perspective(900px) rotateX(${((y - 0.5) * -8).toFixed(2)}deg) rotateY(${((x - 0.5) * 8).toFixed(2)}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s, border-color 0.28s';
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      tiltTimer = setTimeout(() => { card.style.transition = ''; card.style.transform = ''; }, 500);
     });
   });
 })();
@@ -199,3 +226,179 @@ function toggleMenu(force) {
 }
 burger.addEventListener('click', () => toggleMenu());
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+/* ── Scroll progress bar ─────────────────────────── */
+(function scrollProgress() {
+  const bar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    if (total > 0) bar.style.width = (window.scrollY / total * 100) + '%';
+  }, { passive: true });
+})();
+
+/* ── Terminal Easter Egg ─────────────────────────── */
+(function terminal() {
+  const overlay = document.getElementById('terminalOverlay');
+  const body    = document.getElementById('terminalBody');
+  const input   = document.getElementById('terminalInput');
+
+  function print(cls, text) {
+    const line = document.createElement('div');
+    line.className = 'terminal-line' + (cls ? ' ' + cls : '');
+    line.textContent = text;
+    body.appendChild(line);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function openTerm() {
+    if (overlay.classList.contains('open')) return;
+    body.innerHTML = '';
+    print('dim', '╔════════════════════════════════════════════╗');
+    print('dim', '║   haechan@portfolio  —  v1.0.0             ║');
+    print('dim', '╚════════════════════════════════════════════╝');
+    print('', '');
+    print('ok', '  환영합니다! 백엔드 개발자 김해찬의 터미널입니다.');
+    print('', '  도움말: help  |  닫기: esc 또는 exit');
+    print('', '');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => input.focus(), 60);
+  }
+
+  function closeTerm() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  const CMDS = {
+    help() {
+      print('', '');
+      [
+        ['whoami',         '개발자 소개'],
+        ['ls',             '섹션 목록'],
+        ['cat <file>',      '내용 출력 (about|skills|projects|contact)'],
+        ['projects',       '프로젝트 목록'],
+        ['skills',         '기술 스택'],
+        ['cd <section>',   '섹션 이동 (about|skills|projects|career|contact)'],
+        ['clear',          '화면 지우기'],
+        ['exit',           '터미널 닫기'],
+      ].forEach(([c, d]) => print('', `  ${c.padEnd(18)} ${d}`));
+      print('', '');
+    },
+    whoami() {
+      print('', '');
+      print('ok', '  김해찬 (Kim Haechan)');
+      print('', '  Role    : Java Backend Developer');
+      print('', '  Major   : 국민대 정보보안암호수학과');
+      print('', '  Location: Suwon, Korea');
+      print('', '  Email   : gibbm1127@naver.com');
+      print('', '  GitHub  : github.com/k-haechan');
+      print('', '');
+    },
+    ls() {
+      print('', '');
+      print('cmd', '  about/  skills/  projects/  career/  contact/');
+      print('', '');
+    },
+    projects() {
+      print('', '');
+      PROJECTS.forEach(p => {
+        print('cmd', `  [${p.index}] ${p.name}`);
+        print('dim', `         ${p.sub}`);
+      });
+      print('', '');
+    },
+    skills() {
+      print('', '');
+      SKILLS.forEach(([cat, items]) => {
+        print('cmd', `  ${cat}`);
+        print('',    `    └ ${items.join(', ')}`);
+      });
+      print('', '');
+    },
+    'cat about'() {
+      print('', '');
+      print('ok', '  문제의 본질을 분석하고, 시스템으로 구조화하는 백엔드 개발자.');
+      print('', '  SSE·STOMP 실시간, AI 파이프라인, Terraform IaC까지.');
+      print('', '  기획부터 배포까지 직접 책임집니다.');
+      print('', '');
+    },
+    'cat skills'() {
+      print('', '');
+      SKILLS.forEach(([cat, items]) => {
+        print('cmd', `  ${cat}`);
+        print('',    `    └ ${items.join(', ')}`);
+      });
+      print('', '');
+    },
+    'cat projects'() {
+      print('', '');
+      PROJECTS.forEach(p => {
+        print('cmd', `  [${p.index}] ${p.name}`);
+        print('dim', `         ${p.sub}`);
+      });
+      print('', '');
+    },
+    'cat contact'() {
+      print('', '');
+      print('ok',  '  gibbm1127@naver.com');
+      print('cmd', '  github.com/k-haechan');
+      print('', '');
+    },
+    clear() { body.innerHTML = ''; },
+    exit()  { closeTerm(); },
+    quit()  { closeTerm(); },
+  };
+
+  function run(raw) {
+    const cmd = raw.trim().toLowerCase();
+    print('cmd', `haechan@portfolio:~$ ${raw}`);
+
+    if (cmd === 'hire me' || cmd === 'sudo hire me') {
+      print('', '');
+      print('ok', '  ✓ Access granted. 함께 일해봐요!');
+      print('ok', '  → gibbm1127@naver.com');
+      print('', '');
+    } else if (cmd.startsWith('cd ')) {
+      const id = cmd.slice(3).trim();
+      const el = document.getElementById(id);
+      if (el) { closeTerm(); el.scrollIntoView({ behavior: 'smooth' }); }
+      else {
+        print('err', `  섹션 '${id}'을 찾을 수 없습니다.`);
+        print('dim', '  사용: cd about | skills | projects | career | contact');
+      }
+    } else if (cmd.startsWith('cat ')) {
+      const target = cmd.slice(4).replace(/\.txt$/, '').trim();
+      const key = `cat ${target}`;
+      if (CMDS[key]) CMDS[key]();
+      else {
+        print('err', `  cat: ${target}: No such file`);
+        print('dim', '  사용: cat about | skills | projects | contact');
+      }
+    } else if (CMDS[cmd]) {
+      CMDS[cmd]();
+    } else if (cmd !== '') {
+      print('err', `  command not found: ${raw}`);
+      print('dim', '  "help" 를 입력해보세요.');
+    }
+    body.scrollTop = body.scrollHeight;
+  }
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter')  { run(input.value); input.value = ''; }
+    if (e.key === 'Escape') closeTerm();
+    e.stopPropagation();
+  });
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeTerm(); });
+
+  /* Konami code (↑↑↓↓←→←→BA) or backtick to open */
+  const SEQ = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let idx = 0;
+  document.addEventListener('keydown', e => {
+    if (overlay.classList.contains('open')) return;
+    if (document.activeElement.tagName === 'INPUT') return;
+    if (e.key === '`') { openTerm(); idx = 0; return; }
+    idx = e.key === SEQ[idx] ? idx + 1 : (e.key === SEQ[0] ? 1 : 0);
+    if (idx === SEQ.length) { openTerm(); idx = 0; }
+  });
+})();
