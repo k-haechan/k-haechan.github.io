@@ -20,6 +20,7 @@ const COVERS = {
   sns: `<img src="images/sns_thumbnail.png" style="width:100%;height:100%;object-fit:cover;display:block;">`,
   ssafy: `<img src="images/ssafy_thumbnail.png" style="width:100%;height:100%;object-fit:cover;display:block;">`,
   cotree: `<img src="images/cotree_thumbnail.png" style="width:100%;height:100%;object-fit:cover;display:block;">`,
+  hakku: `<img src="images/hakku_thumbnail.png" style="width:100%;height:100%;object-fit:cover;display:block;">`,
 };
 /* ── Projects ──────────────────────────────────── */
 const PROJECTS = [
@@ -171,5 +172,60 @@ const PROJECTS = [
       { tech: '이메일 비동기', reason: '메일 전송은 느린 I/O → 별도 비동기로 분리해 <strong>사용자 응답 속도를 보호</strong>.' },
     ],
     stack: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'OAuth2 (Kakao)', 'QueryDSL', 'MySQL', 'Flyway', 'JMeter', 'Prometheus', 'Grafana'],
+  },
+
+  {
+    id: 'hakku',
+    index: '/ 04',
+    cover: COVERS.hakku,
+    name: 'Hakku 학꾸',
+    sub: '결제 서버 · 스토리지 보안 · AI 챗봇',
+    type: '팀 프로젝트 (페어프로그래밍)',
+    period: '2026.06 — 2026.07',
+    tagline: 'AI 퍼스널컬러 커머스 플랫폼. 페어프로그래밍으로 협업하며 백엔드 아키텍처 리뷰와 보안 점검을 맡아, 결제 서버를 설계·구현하고 스토리지 분리의 보안 설계와 AI 챗봇 초기 구축을 이끌었습니다.',
+    stackMini: 'Spring Boot 4 · Kafka · 토스페이먼츠 · Go · FastAPI',
+    metrics: [
+      { val: '22', lab: '결제 도메인 테스트 (TDD)' },
+      { val: 'Outbox', lab: '결제 이벤트 유실 0' },
+      { val: '6', lab: '폴리글랏 MSA 서비스' },
+    ],
+    links: [
+      { label: 'Live', url: 'https://hakku.rearleg.com/' },
+      { label: 'GitHub (fork)', url: 'https://github.com/k-haechan/hakku' },
+    ],
+    overview: 'AI 퍼스널컬러 진단을 기반으로 꾸미기 아이템을 추천하는 커머스·커뮤니티 플랫폼. Nginx 뒤에 6개 서비스가 독립 실행되는 <strong>폴리글랏 마이크로서비스</strong> 구조입니다. 저는 팀원과 <strong>페어프로그래밍</strong>으로 협업하며 <strong>백엔드 아키텍처 리뷰·보안 취약점 점검</strong>을 맡아, 결제 서버를 설계·구현하고 스토리지 서버 분리의 보안 설계와 AI 챗봇의 뼈대를 이끌었습니다.',
+    problems: [
+      {
+        tag: '신뢰성',
+        title: '이중 결제·커밋 실패 갭 → intent-first 멱등 설계',
+        problem: '결제 버튼 중복 클릭 시 이중 결제, PG 과금 성공 후 DB 커밋 실패 시 "돈은 빠졌는데 주문은 없는" 갭이 발생할 수 있습니다.',
+        solution: '<code>idempotency_key</code> UNIQUE 제약으로 <strong>과금 전 PENDING 의도를 선커밋</strong>(intent-first)하고, 동시 요청의 레이스 패자는 승자 결제를 재조회. PG 호출은 <strong>트랜잭션 밖</strong>에서 수행하고 실패해도 롤백하지 않아, 웹훅/정산이 최종 상태를 확정하도록 <strong>커밋-실패 갭</strong>을 닫았습니다.',
+      },
+      {
+        tag: '신뢰성',
+        title: '결제 이벤트 유실 → 트랜잭셔널 Outbox + Kafka 릴레이',
+        problem: '결제 완료를 주문·알림 등 다른 서비스로 전달할 때 DB 커밋과 메시지 발행 사이에서 이벤트가 유실될 수 있습니다.',
+        solution: '상태 변경과 발행할 이벤트를 <strong>같은 트랜잭션</strong>으로 기록하고, 릴레이 워커가 폴링해 Kafka로 발행(<code>acks=all</code>·멱등 producer). 브로커 ack 후에만 SENT로 전이(at-least-once)하고, 반복 실패 메시지는 <strong>DEAD로 격리(poison isolation)</strong>해 큐 막힘을 방지했습니다.',
+      },
+      {
+        tag: '보안',
+        title: '위조 웹훅 → HMAC-SHA256 상수시간 서명검증',
+        problem: 'PG 웹훅은 "결제 성공"을 통보하는데, 위조된 요청이 결제를 무단 확정시킬 수 있습니다.',
+        solution: 'raw 본문의 <strong>HMAC-SHA256</strong>을 공유 비밀키로 계산해 헤더값과 <strong>상수시간 비교</strong>(타이밍 공격 방지). 32바이트 미만의 약한 키는 부팅 시 fail-fast로 차단했습니다.',
+      },
+      {
+        tag: '아키텍처·보안',
+        title: '스토리지 서버 분리 → Go 네이티브 + JWT 접근제어',
+        problem: '이미지 I/O를 별도 서비스로 분리하면 접근 제어가 네트워크 경계 밖으로 노출되고, 퍼스널컬러 결과 이미지가 URL만으로 유출될 수 있습니다.',
+        solution: 'I/O 중심 특성상 <strong>Go 표준 라이브러리 네이티브 서버</strong>가 적합하다고 판단(팀이 Spring 대조군과 벤치마크로 검증). result 이미지는 <strong>Bearer JWT(HS256) + 업로더 본인</strong>만 접근하도록 소유자 검증하고, <code>JWT_SECRET</code> 미설정 시 무인증 공개를 막기 위해 <strong>기동을 중단</strong>하도록 설계했습니다.',
+      },
+    ],
+    rationale: [
+      { tech: '트랜잭셔널 Outbox', reason: '결제 상태와 이벤트를 한 트랜잭션으로 묶어 <strong>원자적으로 기록</strong> → 릴레이가 at-least-once로 발행하고 소비자는 멱등 처리해 유실·중복을 모두 방어.' },
+      { tech: 'intent-first + 낙관적 락', reason: 'PG 호출 전 의도를 선커밋해 이중 결제를 구조적으로 차단하고, 동기/웹훅 동시 정산은 <code>@Version</code> 낙관적 락 + 1회 재시도로 <strong>멱등 no-op</strong> 확정.' },
+      { tech: '토스 orderId = 멱등키', reason: '서버가 생성한 <code>orderId</code>를 멱등키로 그대로 사용 → 클라이언트 멱등키 충돌·이중 INSERT 레이스가 구조적으로 제거됨.' },
+      { tech: 'Go (스토리지)', reason: '이미지 바이트 전달은 CPU보다 I/O 중심 → JVM보다 가벼운 <strong>Go 네이티브</strong>가 적합. 팀 벤치마크로 선택을 검증.' },
+    ],
+    stack: ['Java 17', 'Spring Boot 4.0', 'Spring Security', 'Spring Data JPA', 'Kafka (KRaft)', 'Flyway', 'JJWT', '토스페이먼츠', 'PostgreSQL', 'Redis', 'Go', 'FastAPI', 'OpenAI', 'Vue 3', 'Docker', 'Nginx'],
   },
 ];
