@@ -180,20 +180,20 @@ const PROJECTS = [
     cover: COVERS.hakku,
     name: 'Hakku 학꾸',
     sub: '결제 서버 · 스토리지 보안 · AI 챗봇',
-    type: '팀 프로젝트 (페어프로그래밍)',
-    period: '2026.06 — 2026.07',
-    tagline: 'AI 퍼스널컬러 커머스 플랫폼. 페어프로그래밍으로 협업하며 백엔드 아키텍처 리뷰와 보안 점검을 맡아, 결제 서버를 설계·구현하고 스토리지 분리의 보안 설계와 AI 챗봇 초기 구축을 이끌었습니다.',
+    type: '팀 프로젝트 (2인 페어프로그래밍)',
+    period: '2026.05 — 2026.06',
+    tagline: 'SSAFY 1학기 관통 프로젝트 최우수상(서울 17반 1등) 수상작. AI 퍼스널컬러 커머스 플랫폼으로, 페어프로그래밍으로 협업하며 백엔드 아키텍처 리뷰와 보안 점검을 맡아 결제 서버를 설계·구현하고 스토리지 분리의 보안 설계와 AI 챗봇 초기 구축을 이끌었습니다.',
     stackMini: 'Spring Boot 4 · Kafka · 토스페이먼츠 · Go · FastAPI',
     metrics: [
+      { val: '최우수상', lab: 'SSAFY 1학기 관통 프로젝트 · 서울 17반 1등' },
       { val: '22', lab: '결제 도메인 테스트 (TDD)' },
       { val: 'Outbox', lab: '결제 이벤트 유실 0' },
-      { val: '6', lab: '폴리글랏 MSA 서비스' },
     ],
     links: [
       { label: 'Live', url: 'https://hakku.rearleg.com/' },
       { label: 'GitHub (fork)', url: 'https://github.com/k-haechan/hakku' },
     ],
-    overview: 'AI 퍼스널컬러 진단을 기반으로 꾸미기 아이템을 추천하는 커머스·커뮤니티 플랫폼. Nginx 뒤에 6개 서비스가 독립 실행되는 <strong>폴리글랏 마이크로서비스</strong> 구조입니다. 저는 팀원과 <strong>페어프로그래밍</strong>으로 협업하며 <strong>백엔드 아키텍처 리뷰·보안 취약점 점검</strong>을 맡아, 결제 서버를 설계·구현하고 스토리지 서버 분리의 보안 설계와 AI 챗봇의 뼈대를 이끌었습니다.',
+    overview: '<strong>삼성청년SW·AI아카데미(SSAFY) 1학기 관통 프로젝트 경진대회 최우수상(서울 17반 1등)</strong>을 수상한 팀 프로젝트입니다. AI 퍼스널컬러 진단을 기반으로 꾸미기 아이템을 추천하는 커머스·커뮤니티 플랫폼으로, Nginx 뒤에 6개 서비스가 독립 실행되는 <strong>폴리글랏 마이크로서비스</strong> 구조입니다. 저는 팀원과 <strong>페어프로그래밍</strong>으로 협업하며 <strong>백엔드 아키텍처 리뷰·보안 취약점 점검</strong>을 맡아, 결제 서버를 설계·구현하고 스토리지 서버 분리의 보안 설계와 AI 챗봇의 뼈대를 이끌었습니다.',
     problems: [
       {
         tag: '신뢰성',
