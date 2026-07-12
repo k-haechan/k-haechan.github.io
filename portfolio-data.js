@@ -26,7 +26,7 @@ const COVERS = {
 const PROJECTS = [
   {
     id: 'sns',
-    index: '/ 02',
+    index: '/ 03',
     cover: COVERS.sns,
     name: 'SNS Service',
     sub: '실시간 소셜 네트워킹 백엔드',
@@ -76,7 +76,7 @@ const PROJECTS = [
 
   {
     id: 'ssafy',
-    index: '/ 01',
+    index: '/ 02',
     cover: COVERS.ssafy,
     name: 'SSAFY Study Platform',
     sub: 'AI 퀴즈·실시간 알림 스터디 백엔드',
@@ -124,7 +124,7 @@ const PROJECTS = [
 
   {
     id: 'cotree',
-    index: '/ 03',
+    index: '/ 04',
     cover: COVERS.cotree,
     name: 'Cotree',
     sub: '교육 플랫폼 — 회원·인증 도메인 & 성능 최적화',
@@ -176,7 +176,7 @@ const PROJECTS = [
 
   {
     id: 'hakku',
-    index: '/ 04',
+    index: '/ 01',
     cover: COVERS.hakku,
     name: 'Hakku 학꾸',
     sub: '결제 서버 · 스토리지 보안 · AI 챗봇',
